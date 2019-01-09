@@ -124,14 +124,9 @@
                     </div>
                     <div class="link-addr input-wrapper">
                         <input type="text" v-model="link_addr" :placeholder="link_type == 'link' ? d_words.tl_popup_link_addr : d_words.tl_popup_img_link_addr">
-                        <button type="button" style="outline:none" @click="() => { $refs.refImage.open() }" title="图片">
-                            <svg viewBox="0 0 18 18">
-                            <rect class="ql-stroke" height="10" width="12" x="3" y="4"></rect>
-                            <circle class="ql-fill" cx="6" cy="7" r="1"></circle>
-                            <polyline class="ql-even ql-fill" points="5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12"></polyline>
-                            </svg>
-                        </button>
+                        <button type="text" @click="() => { $refs.refImage.open() }">添加内容库图片</button>
                     </div>
+                    <button type="text" @click="() => { $refs.refImage.open() }">添加内容库图片</button>
                     <div class="op-btn cancel" @click.stop="s_img_link_open = false">{{d_words.tl_popup_link_cancel}}</div>
                     <div class="op-btn sure" @click.stop="$imgLinkAdd()">{{d_words.tl_popup_link_sure}}</div>
                 </div>
