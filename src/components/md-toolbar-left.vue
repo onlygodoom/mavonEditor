@@ -126,7 +126,6 @@
                         <input type="text" v-model="link_addr" :placeholder="link_type == 'link' ? d_words.tl_popup_link_addr : d_words.tl_popup_img_link_addr">
                         <button type="text" @click="() => { $refs.refImage.open() }">添加内容库图片</button>
                     </div>
-                    <button type="text" @click="() => { $refs.refImage.open() }">添加内容库图片</button>
                     <div class="op-btn cancel" @click.stop="s_img_link_open = false">{{d_words.tl_popup_link_cancel}}</div>
                     <div class="op-btn sure" @click.stop="$imgLinkAdd()">{{d_words.tl_popup_link_sure}}</div>
                 </div>
