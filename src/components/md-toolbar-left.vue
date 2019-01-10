@@ -69,9 +69,9 @@
             <transition name="fade">
                 <div  class="op-image popup-dropdown" v-show="s_img_dropdown_open" @mouseleave="$mouseleave_img_dropdown" @mouseenter="$mouseenter_img_dropdown">
                     <div  class="dropdown-item" @click.stop="$toggle_imgLinkAdd('imagelink')"><span>{{d_words.tl_image}}</span></div>
-                    <div class="dropdown-item" style="overflow: hidden">
+                    <!-- <div class="dropdown-item" style="overflow: hidden">
                         <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" @change="$imgAdd($event)" multiple="multiple"/>{{d_words.tl_upload}}
-                    </div>
+                    </div> -->
 
                     <div
                         v-for="(item, index) in img_file"
@@ -124,10 +124,14 @@
                     </div>
                     <div class="link-addr input-wrapper">
                         <input type="text" v-model="link_addr" :placeholder="link_type == 'link' ? d_words.tl_popup_link_addr : d_words.tl_popup_img_link_addr">
-                        <button type="text" @click="() => { $refs.refImage.open() }">添加内容库图片</button>
+                        <div class="sns-div">
+                            <button type="text" @click="() => { $refs.refImage.open() }" class="sns-image-botton">添加内容库图片</button>
+                        </div>
                     </div>
-                    <div class="op-btn cancel" @click.stop="s_img_link_open = false">{{d_words.tl_popup_link_cancel}}</div>
-                    <div class="op-btn sure" @click.stop="$imgLinkAdd()">{{d_words.tl_popup_link_sure}}</div>
+                    <div class="double_botton">
+                        <div class="op-btn cancel" @click.stop="s_img_link_open = false">{{d_words.tl_popup_link_cancel}}</div>
+                        <div class="op-btn sure" @click.stop="$imgLinkAdd()">{{d_words.tl_popup_link_sure}}</div>
+                    </div>
                 </div>
             </div>
         </transition>
@@ -465,3 +469,38 @@
                 color #000
 
 </style>
+<style scoped>
+.sns-div {
+    margin: 12px 0px 10px 0px;
+}
+.sns-image-botton {
+  background: #7892c2;
+  background-image: -webkit-linear-gradient(top, #7892c2, #476e9e);
+  background-image: -moz-linear-gradient(top, #7892c2, #476e9e);
+  background-image: -ms-linear-gradient(top, #7892c2, #476e9e);
+  background-image: -o-linear-gradient(top, #7892c2, #476e9e);
+  background-image: linear-gradient(to bottom, #7892c2, #476e9e);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  text-shadow: 0px 1px 0px #283966;
+  -webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+  -moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 3px 3px 3px 3px;
+  border: solid #4e6096 1px;
+  text-decoration: none;
+}
+.sns-image-botton:hover {
+  color: #ffffff;
+  background: #476e9e;
+  text-decoration: none;
+}
+.double_botton {
+  margin: 20px 0px 5px 0px;
+}
+</style>
+
