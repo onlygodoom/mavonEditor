@@ -481,34 +481,8 @@
 .sns-div {
     margin: 12px 0px 10px 0px;
 }
-.sns-image-botton {
-  background: #7892c2;
-  background-image: -webkit-linear-gradient(top, #7892c2, #476e9e);
-  background-image: -moz-linear-gradient(top, #7892c2, #476e9e);
-  background-image: -ms-linear-gradient(top, #7892c2, #476e9e);
-  background-image: -o-linear-gradient(top, #7892c2, #476e9e);
-  background-image: linear-gradient(to bottom, #7892c2, #476e9e);
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
-  text-shadow: 0px 1px 0px #283966;
-  -webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
-  -moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
-  box-shadow: 0px 0px 0px 2px #9fb4f2;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 3px 3px 3px 3px;
-  border: solid #4e6096 1px;
-  text-decoration: none;
-}
-.sns-image-botton:hover {
-  color: #ffffff;
-  background: #476e9e;
-  text-decoration: none;
-}
 .double_botton {
-  margin: 20px 0px 5px 0px;
+  margin: 30px 0px 5px 0px;
 }
 </style>
 
