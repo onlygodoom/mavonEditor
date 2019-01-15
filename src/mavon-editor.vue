@@ -283,6 +283,7 @@ export default {
         })
     },
     mounted() {
+        var MyComponent = this.component('sns-ref-image')
         var $vm = this;
         this.$el.addEventListener('paste', function (e) {
             $vm.$paste(e);
@@ -296,7 +297,7 @@ export default {
         // 图片预览事件监听
         ImagePreviewListener(this);
         // 设置默认焦点
-        if(this.autofocus) {
+        if (this.autofocus) {
             this.getTextareaDom().focus();
         }
         // fullscreen事件
