@@ -320,12 +320,12 @@
             refImageHandle(url) {
                 let self = this
                 self.link_addr = url
+            },
+            loadingSNS() {
+                let self = this
+                self.$refs.refImage.open()
+                self.$refs.refImage.close()
             }
-        },
-        mounted() {
-            let self = this
-            self.$refs.refImage.open()
-            self.$refs.refImage.close()
         }
     }
 </script>
