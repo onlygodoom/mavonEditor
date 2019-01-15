@@ -284,7 +284,6 @@ export default {
     },
     mounted() {
         var $vm = this;
-        // this.$refs.toolbar_left.loadingSNS()
         this.$el.addEventListener('paste', function (e) {
             $vm.$paste(e);
         })
