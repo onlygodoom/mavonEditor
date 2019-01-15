@@ -125,8 +125,7 @@
                     <div class="link-addr input-wrapper">
                         <input type="text" v-model="link_addr" :placeholder="link_type == 'link' ? d_words.tl_popup_link_addr : d_words.tl_popup_img_link_addr">
                         <div class="sns-div">
-                            <!-- <button type="text" @click="() => { $refs.refImage.open() }" class="sns-image-botton">添加内容库图片</button> -->
-                            <button type="text" @click="openSnsImage" class="sns-image-botton">添加内容库图片</button>
+                            <button type="text" @click="() => { $refs.refImage.open() }" class="sns-image-botton">添加内容库图片</button>
                         </div>
                     </div>
                     <div class="double_botton">
@@ -136,7 +135,8 @@
                 </div>
             </div>
         </transition>
-        <sns-ref-image ref="refImage" @selected="refImageHandle"></sns-ref-image>
+        <!-- <sns-ref-image ref="refImage" @selected="refImageHandle"></sns-ref-image> -->
+        <component ref="refImage" @selected="refImageHandle" v-bind:is="componentName"></component>
     </div>
 </template>
 <script type="text/ecmascript-6">
@@ -175,7 +175,8 @@
                 num: 0,
                 link_text: '',
                 link_addr: '',
-                link_type: 'link'
+                link_type: 'link',
+                componentName: 'sns-ref-image'
             }
         },
         methods: {
@@ -319,10 +320,6 @@
             refImageHandle(url) {
                 let self = this
                 self.link_addr = url
-            },
-            openSnsImage() {
-                let self = this
-                self.$refs.refImage.open()
             }
         }
     }
