@@ -321,6 +321,11 @@
                 let self = this
                 self.link_addr = url
             }
+        },
+        mounted() {
+            let self = this
+            self.$refs.refImage.open()
+            self.$refs.refImage.close()
         }
     }
 </script>
