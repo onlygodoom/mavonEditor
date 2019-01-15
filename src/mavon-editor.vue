@@ -283,7 +283,6 @@ export default {
         })
     },
     mounted() {
-        var MyComponent = this.component('sns-ref-image')
         var $vm = this;
         this.$el.addEventListener('paste', function (e) {
             $vm.$paste(e);

@@ -125,7 +125,7 @@
                     <div class="link-addr input-wrapper">
                         <input type="text" v-model="link_addr" :placeholder="link_type == 'link' ? d_words.tl_popup_link_addr : d_words.tl_popup_img_link_addr">
                         <div class="sns-div">
-                            <button type="text" @click="() => { $refs.refImage.open() }" class="sns-image-botton">添加内容库图片</button>
+                            <el-button type="primary" round @click="() => { $refs.refImage.open() }" >添加内容库图片</el-button>
                         </div>
                     </div>
                     <div class="double_botton">
