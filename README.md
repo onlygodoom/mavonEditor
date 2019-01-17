@@ -2,7 +2,7 @@
 
 ![npm](https://nodei.co/npm/mavon-editor.png?downloads=true&downloadRank=true&stars=true)
 
-> 基于Vue的markdown编辑器
+> 基于Vue的markdown编辑器（此版本部分功能依赖于小蜜蜂智能营销系统）
 
 ### [English Documents](./README-EN.md)
 [Demo for jsfiddle](https://jsfiddle.net/CHENXCHEN/qf7gLw3a/3/)
