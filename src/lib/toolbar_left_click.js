@@ -173,6 +173,56 @@ export const toolbar_left_click = (_type, $vm) => {
            prefix: '::: hljs-left\n\n',
            subfix: '\n\n:::\n',
            str: $vm.d_words.tl_alignleft
+         },
+         'rushmail_productname': {
+            prefix: '',
+            subfix: '',
+            str: '<p style="padding:0;margin:0;font-weight:normal;font-size: 24px; font-family: \'Microsoft YaHei\', sans-serif; color: #f60; line-height: 35px;"><strong id="productname">ProductName</strong></p>'
+         },
+         'rushmail_productImg': {
+             prefix: '',
+             subfix: '',
+             str: '<table border="0" width="600px" cellspacing="0" cellpadding="0"><tbody><tr id="productImg1"><td style="border-collapse: collapse; padding: 0px;" align="center"><img class="productImg1" style="display: inline-block; width: 300px; height: 300px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /></td></tr><tr id="productImg2"><td style="border-collapse: collapse; padding: 0px;" align="center"><img class="productImg2" style="display: inline-block; width: 200px; height: 200px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /><img class="productImg2" style="display: inline-block; width: 200px; height: 200px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /></td></tr><tr id="productImg3"><td style="border-collapse: collapse; padding: 0px;" align="center"><img class="productImg3" style="display: inline-block; width: 175px; height: 175px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /><img class="productImg3" style="display: inline-block; width: 175px; height: 175px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /><img class="productImg3" style="display: inline-block; width: 175px; height: 175px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /></td></tr><tr id="productImg4"><td style="border-collapse: collapse; padding: 0px;" align="center"><img class="productImg4" style="float: left; display: block; width: 150px; height: 150px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /><img class="productImg4" style="float: left; display: block; width: 150px; height: 150px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /><img class="productImg4" style="float: left; display: block; width: 150px; height: 150px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /><img class="productImg4" style="float: left; display: block; width: 150px; height: 150px;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Sofa-Blue.jpg" alt="" border="0" /></td></tr></tbody></table>'
+         },
+         'rushmail_simpleprodesc': {
+             prefix: '',
+             subfix: '',
+             str: '<div style="max-height: 300px; overflow-y:auto;font-size:14px;color:#333;line-height:25px;"><span id="simpleprodesc" style="margin:0;padding:0;display:block;">ProductDetails</span></div>'
+         },
+         'rushmail_productdescurl': {
+             prefix: '',
+             subfix: '',
+             str: '<a id="productdescurl" style="font-family: \'Microsoft JhengHei\', sans-serif;display:inline-block;padding:0 15px;font-size:14px;line-height:35px;color:#f60;border:1px solid #f60;border-radius:3px;cursor:pointer;" target="_blank">Check More</a>'
+         },
+         'rushmail_contactnow': {
+             prefix: '',
+             subfix: '',
+             str: '<a id="contactnow" target="_blank" style="font-family: \'Microsoft JhengHei\', sans-serif;display:inline-block;padding:0 15px;font-size:14px;line-height:35px;border-radius:3px;color:#fff;background:#f60;border:1px solid #f60;cursor:pointer;" target="_blank">Contact Now</a>'
+         },
+         'rushmail_companyImg': {
+             prefix: '',
+             subfix: '',
+             str: '<img id="companyImg" style="max-width: 171px; display: block;margin:0;padding:0;" src="http://mailimage.rushingchina.com/image/wb/Appromote/Utensils.jpg" alt="" width="172" height="172" border="0" />'
+         },
+         'rushmail_companyname': {
+             prefix: '',
+             subfix: '',
+             str: '<p id="companyname" style="font-size:18px;color:#f60;line-height:30px;font-weight:600;text-transform:uppercase;padding:0;margin:0;">CompanyName</p>'
+         },
+         'rushmail_profile': {
+             prefix: '',
+             subfix: '',
+             str: '<p id="profile" style="margin:0;padding:0;">CompanyIntroduction</p>'
+         },
+         'rushmail_address': {
+             prefix: '',
+             subfix: '',
+             str: '<p id="address" style="font-size:14px;line-height:25px;color:#FF6633;">Address</p>'
+         },
+         'rushmail_pchost': {
+             prefix: '',
+             subfix: '',
+             str: '<a id="pchost" target="_blank" style="text-decoration:none;font-size:14px;line-height:35px;display:block;background:rgba(255,100,0,0.1);color:#f60;text-align:center;border-radius:5px;cursor:pointer;">Browse</a>'
          }
      };
      if (_param_of_insert_text.hasOwnProperty(_type)) {

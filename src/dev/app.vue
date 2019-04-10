@@ -45,20 +45,41 @@
             </mavon-editor>
             <button ref="diy" type="button" @click="$click('selftest')" class="op-icon fa fa-mavon-align-left"
                 aria-hidden="true" title="自定义"></button>
+            <!-- <button ref="automaticEmail" type="button" @click="$click('automaticEmail')" class="op-icon fa fa-mavon-compress"
+                aria-hidden="true" title="自动推送模板元素"></button> -->
+            <div ref="automaticEmail" type="button"
+                class="op-icon fa fa-mavon-compress dropdown dropdown-wrapper" aria-hidden="true"  @mouseleave="$mouseleave_rushmail_dropdown" @mouseenter="$mouseenter_rushmail_dropdown"
+                title="自动推送模板元素，标签中的内容会自动替换为产品中的内容">
+                <transition name="fade">
+                    <div class="op-header popup-dropdown" v-show="s_rushmail_dropdown_open" @mouseenter="$mouseenter_rushmail_dropdown" @mouseleave="$mouseleave_rushmail_dropdown">
+                        <div title="id=的内容请勿修改"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_productname')"><span>产品名</span></div>
+                        <div title="class=的内容和img标签请勿修改，系统会根据产品图片数量自动选择1-4张并排的模块，请勿自行删除模块"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_productImg')"><span>产品图片</span></div>
+                        <div title="id=的内容请勿修改"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_simpleprodesc')"><span>产品描述</span></div>
+                        <div title="id=的内容和a标签请勿修改"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_productdescurl')"><span>产品链接</span></div>
+                        <div title="id=的内容和a标签请勿修改"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_contactnow')"><span>询盘链接</span></div>
+                        <div title="id=的内容和img标签请勿修改"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_companyImg')"><span>公司LOGO</span></div>
+                        <div title="id=的内容请勿修改"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_companyname')"><span>公司名称</span></div>
+                        <div title="id=的内容请勿修改"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_profile')"><span>公司详情</span></div>
+                        <div title="id=的内容请勿修改"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_address')"><span>公司地址</span></div>
+                        <div title="id=的内容和a标签请勿修改"  class="dropdown-item" @click.stop="$click_Rushmail('rushmail_pchost')"><span>公司链接</span></div>
+                        <div title="id=的内容和a标签还有href请勿修改"  class="dropdown-item" @click.stop="addUnsubscribe()"><span>退订链接</span></div>
+                    </div>
+                </transition>
+            </div>
         </div>
         <!--自定义-->
-        <div v-if="screen_phone" class="item">
+        <!-- <div v-if="screen_phone" class="item">
             <h2 class="item-header">
                 {{d_words.customize_setting}}
             </h2>
             <mavon-editor :language="d_language" @save="savetwo" :toolbars="toolbars" class="item-editor"
                           v-model="help2"></mavon-editor>
-        </div>
-        <div class="item">
+        </div> -->
+        <!-- <div class="item">
       <span style="display: block;margin: 30px 0 15px 0;color: #1e6bb8" class="">
         {{d_words.mark}}
       </span>
-        </div>
+        </div> -->
         <div class="item">
             <h2 class="item-header">
                 {{d_words.detail}}<a href="https://github.com/hinesboy/mavonEditor">GitHub</a>
@@ -150,7 +171,9 @@
                 imageClick: function (file) {
                     console.log(file);
                 },
-                imgName: ''
+                imgName: '',
+                rushmail_timer: null,
+                s_rushmail_dropdown_open: false
             }
         },
         created () {
@@ -166,7 +189,9 @@
             var md = this.$refs.md;
             var toolbar_left = md.$refs.toolbar_left;
             var diy = this.$refs.diy;
+            var automaticEmail = this.$refs.automaticEmail;
             toolbar_left.$el.append(diy)
+            toolbar_left.$el.append(automaticEmail)
             // toolbar_left.$el.append(diy.$el)
             // console.log(toolbar_left)
         },
@@ -253,6 +278,22 @@
                 var md = this.$refs.md;
                 var toolbar_left = md.$refs.toolbar_left;
                 toolbar_left.$imgDelByFilename(this.imgName);
+            },
+            $mouseleave_rushmail_dropdown() {
+                let vm = this
+                this.rushmail_timer = setTimeout(function() {
+                    vm.s_rushmail_dropdown_open = false
+                },200)
+            },
+            $mouseenter_rushmail_dropdown() {
+                clearTimeout(this.rushmail_timer)
+                this.s_rushmail_dropdown_open = true
+            },
+            $click_Rushmail(_type) {
+                this.$refs.md.toolbar_left_click(_type)
+                this.s_header_dropdown_open = false
+            },
+            addUnsubscribe() {
             }
         },
         watch: {
@@ -347,4 +388,38 @@
             height 700px
             @media only screen and (max-width 1600px)
                 height 550px
+.op-icon.dropdown-wrapper.dropdown
+    position relative
+    .popup-dropdown
+            position absolute
+            display block
+            background #fff
+            top 32px
+            left -45px
+            min-width 130px
+            z-index 1600
+            box-shadow: 0 0px 4px rgba(0, 0, 0, .156863), 0 0px 4px rgba(0, 0, 0, .227451)
+            transition all 0.2s linear 0s
+            &.op-header
+                left -30px
+                min-width 90px
+            &.fade-enter-active, &.fade-leave-active
+                opacity 1
+            &.fade-enter, &.fade-leave-active
+                opacity 0
+    .dropdown-item
+            height 35px
+            line-height @height
+            font-size 12px
+            transition all 0.2s linear 0s
+            position relative
+            &:hover
+                background #eaeaea
+            input
+                position absolute
+                font-size 100px
+                right 0
+                top 0
+                opacity 0
+                cursor pointer
 </style>
