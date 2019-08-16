@@ -66,6 +66,8 @@
                     </div>
                 </transition>
             </div>
+            <button ref="importTemplate" type="button" @click="openImportTemplate" class="op-icon-text"
+                aria-hidden="true" title="导入模板">导入模板</button>
         </div>
         <!--自定义-->
         <!-- <div v-if="screen_phone" class="item">
@@ -190,8 +192,10 @@
             var toolbar_left = md.$refs.toolbar_left;
             var diy = this.$refs.diy;
             var automaticEmail = this.$refs.automaticEmail;
+            var importTemplate = this.$refs.importTemplate;
             toolbar_left.$el.append(diy)
             toolbar_left.$el.append(automaticEmail)
+            toolbar_left.$el.append(importTemplate)
             // toolbar_left.$el.append(diy.$el)
             // console.log(toolbar_left)
         },
@@ -294,6 +298,9 @@
                 this.s_header_dropdown_open = false
             },
             addUnsubscribe() {
+            },
+            openImportTemplate() {
+                this.$emit('openImportTemplate')
             }
         },
         watch: {
@@ -422,4 +429,27 @@
                 top 0
                 opacity 0
                 cursor pointer
+.op-icon-text
+          display inline-block
+          cursor pointer
+          height 28px
+          margin 6px 0 5px 0px
+          font-size 15px
+          padding 4.5px 6px 5px 3.5px
+          color #757575
+          border-radius 5px
+          text-align center
+          background none
+          border none
+          outline none
+          line-height 1
+          vertical-align middle
+          &.dropdown-wrapper
+            line-height 18px
+          &.selected
+            color rgba(0, 0, 0, 0.8)
+            background #eaeaea
+          &:hover
+            color rgba(0, 0, 0, 0.8)
+            background #e5e5e5
 </style>
